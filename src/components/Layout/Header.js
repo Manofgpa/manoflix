@@ -1,5 +1,6 @@
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import styled from 'styled-components'
+import { Link } from '@reach/router'
 
 
 const HeaderComponent = () => {
@@ -12,13 +13,13 @@ const HeaderComponent = () => {
                         <img src="manoflix.png" width='200px' alt=""></img>
                     </Logo>
                     <NavItem>
-                        <NavLink href="/">Home</NavLink>
+                        <NavLink tag={Link} to="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/movies">Movies</NavLink>
+                        <NavLink tag={Link} to="/movies">Movies</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/about">About</NavLink>
+                        <NavLink tag={Link} to="/about">About</NavLink>
                     </NavItem>
                 </Header>
             </Nav>
