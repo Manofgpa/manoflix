@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# anotacoes
+colors.txt
+anotacoes.txt
+
+
 # testing
 /coverage
 
