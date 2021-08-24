@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-    flex: 1;
-
+  flex: 1;
 `
 
 export const InsideContainer = styled.section`

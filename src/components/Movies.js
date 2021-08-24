@@ -30,15 +30,9 @@ const MoviesContainer = () => {
         }
     }, [submit])
 
-    useEffect(() => {
-        moviesData.forEach(movie => {
-            // console.log(movie);
-        })
-    }, [moviesData])
-
     const MoviesList = () => {
         return (
-            <section>
+            <MovieList>
                 {
                     moviesData.map(movie => {
                         console.log(movie)
@@ -47,17 +41,18 @@ const MoviesContainer = () => {
                         )
                     })
                 }
-            </section>
+            </MovieList>
         )
     }
 
     const MovieContainer = ({ movie: { original_title, overview, backdrop_path } }) => {
         return (
-            <article className='Movie' style={{ color: 'white' }} >
-                <h4>{original_title}</h4>
-                <img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt={original_title} width="150" height="150" />
+            <Movie className='Movie'>
+                <Image src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt={original_title} />
+                <H4>{original_title}</H4>
                 <h6>{overview}</h6>
-            </article>
+                <AddToListButton type="button">Add to list</AddToListButton>
+            </Movie>
         )
     }
 
@@ -65,7 +60,7 @@ const MoviesContainer = () => {
         <Container>
             < Search >
                 <input className="form-control" onChange={e => setSearch(e.target.value)} type="text" name="movie" value={search} placeholder='Search for a movie.' />
-                <Button type="button" onClick={handleClick} value="Search" name="search" />
+                <SearchButton type="button" onClick={handleClick} value="Search" name="search" />
             </Search >
             <MoviesList />
         </Container>
@@ -73,7 +68,6 @@ const MoviesContainer = () => {
 }
 
 export default MoviesContainer
-
 
 const Search = styled.div`
     margin-top: 2em !important;
@@ -84,13 +78,41 @@ const Search = styled.div`
     color: white;
 `
 
-const Button = styled.input`
+const SearchButton = styled.input`
     font-size: 20px;
     margin: 0 5px;
 `
-
-const Movie = styled.article`
-
-
+const AddToListButton = styled.button`
+    width: 100%;
+    height: 30px;
 `
 
+const MovieList = styled.div`
+    max-width: 1280px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+`
+
+const Movie = styled.div`
+    color: white;
+    width: 30vw;
+    background-color: #0B2027;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 8px 5px 24px 0px #7F7F7F;
+    box-shadow: 5px 2px 12px 0px #7F7F7F;
+    display: grid;
+`
+
+const H4 = styled.h4`
+    font-weight: bold;
+    margin-top: 0.5rem;
+`
+
+const Image = styled.img`
+    border: 1px dotted white;
+    margin: 0.25rem;
+    width: 100%;
+`
