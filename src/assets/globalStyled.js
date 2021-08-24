@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
-    outline: 0;
+    outline: none;
 }
 
 body{
@@ -13,7 +13,7 @@ body{
     background-color: #3C1518;
 }
 
-#root {
+body, #root {
     height: 100vh;
     display: flex;
     flex-direction: column;

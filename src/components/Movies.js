@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { Container } from '../assets/style'
 
 
 const MoviesContainer = () => {
@@ -42,7 +43,7 @@ const MoviesContainer = () => {
                     moviesData.map(movie => {
                         console.log(movie)
                         return (
-                            <Movie movie={movie} key={movie.id} />
+                            <MovieContainer movie={movie} key={movie.id} />
                         )
                     })
                 }
@@ -50,7 +51,7 @@ const MoviesContainer = () => {
         )
     }
 
-    const Movie = ({ movie: { original_title, overview, backdrop_path } }) => {
+    const MovieContainer = ({ movie: { original_title, overview, backdrop_path } }) => {
         return (
             <article className='Movie' style={{ color: 'white' }} >
                 <h4>{original_title}</h4>
@@ -61,17 +62,18 @@ const MoviesContainer = () => {
     }
 
     return (
-        <div>
+        <Container>
             < Search >
                 <input className="form-control" onChange={e => setSearch(e.target.value)} type="text" name="movie" value={search} placeholder='Search for a movie.' />
                 <Button type="button" onClick={handleClick} value="Search" name="search" />
             </Search >
             <MoviesList />
-        </div>
+        </Container>
     )
 }
 
 export default MoviesContainer
+
 
 const Search = styled.div`
     margin-top: 2em !important;
@@ -85,5 +87,10 @@ const Search = styled.div`
 const Button = styled.input`
     font-size: 20px;
     margin: 0 5px;
+`
+
+const Movie = styled.article`
+
+
 `
 

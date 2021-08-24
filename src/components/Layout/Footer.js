@@ -14,7 +14,7 @@ const FooterComponent = () => {
 export default FooterComponent
 
 
-const Footer = styled.div`
+const Footer = styled.footer`
     padding: 30px;
     text-align: center;
     background-color: #0B2027;

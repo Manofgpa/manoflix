@@ -30,6 +30,7 @@ const HeaderComponent = () => {
 
 export default HeaderComponent
 
+
 const Navigation = styled.div`
     background-color: #0B2027;
     color: #D52941;
@@ -40,7 +41,6 @@ const Header = styled.div`
     display: flex;
     color: white !important;
 `
-
 
 const Logo = styled.div`
     flex: 1;
