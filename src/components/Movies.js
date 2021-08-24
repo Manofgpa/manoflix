@@ -61,13 +61,13 @@ const MoviesContainer = () => {
     }
 
     return (
-        <>
+        <div>
             < Search >
                 <input className="form-control" onChange={e => setSearch(e.target.value)} type="text" name="movie" value={search} placeholder='Search for a movie.' />
                 <Button type="button" onClick={handleClick} value="Search" name="search" />
             </Search >
             <MoviesList />
-        </>
+        </div>
     )
 }
 

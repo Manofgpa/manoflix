@@ -1,6 +1,7 @@
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import styled from 'styled-components'
 import { Link } from '@reach/router'
+import React from 'react'
 
 
 const HeaderComponent = () => {
