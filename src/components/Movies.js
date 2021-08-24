@@ -40,6 +40,7 @@ const MoviesContainer = () => {
             <section>
                 {
                     moviesData.map(movie => {
+                        console.log(movie)
                         return (
                             <Movie movie={movie} key={movie.id} />
                         )
@@ -49,10 +50,12 @@ const MoviesContainer = () => {
         )
     }
 
-    const Movie = ({ original_title, id }) => {
+    const Movie = ({ movie: { original_title, overview, backdrop_path } }) => {
         return (
-            <article className='Movie' >
-                <h1>{original_title}</h1>
+            <article className='Movie' style={{ color: 'white' }} >
+                <h4>{original_title}</h4>
+                <img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt={original_title} width="150" height="150" />
+                <h6>{overview}</h6>
             </article>
         )
     }
@@ -83,3 +86,4 @@ const Button = styled.input`
     font-size: 20px;
     margin: 0 5px;
 `
+
