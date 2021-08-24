@@ -45,11 +45,12 @@ const MoviesContainer = () => {
         )
     }
 
-    const MovieContainer = ({ movie: { original_title, overview, backdrop_path } }) => {
+    const MovieContainer = ({ movie: { original_title, overview, poster_path, vote_average } }) => {
         return (
             <Movie className='Movie'>
-                <Image src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt={original_title} />
+                <Image src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt={original_title} />
                 <H4>{original_title}</H4>
+                <p>{vote_average}</p>
                 <h6>{overview}</h6>
                 <AddToListButton type="button">Add to list</AddToListButton>
             </Movie>
