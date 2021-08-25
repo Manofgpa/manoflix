@@ -6,20 +6,38 @@ import { Container } from '../assets/style'
 
 const MoviesContainer = () => {
 
-    const tmdbApiUri = 'https://api.themoviedb.org/3/search/movie?api_key=479b26e5222f9ef3fac0b4d50717c56b&query='
+    const tmdbMovieListUri = 'https://api.themoviedb.org/3/search/movie?api_key=479b26e5222f9ef3fac0b4d50717c56b&query='
 
     const [moviesData, setMovies] = useState([])
     const [search, setSearch] = useState('')
     const [submit, setSubmit] = useState('')
+    const [singleMovie, setSingleMovie] = useState('')
+    const [showMovie, setShowMovie] = useState(false)
 
     const handleClick = () => {
         setSubmit(search)
+        setShowMovie
     }
+
+    const handleLearnClick = (e) => {
+        const movieId = e.target.value
+        const tmdbSingleMovieUri = `https://api.themoviedb.org/3/movie/${movieId}?api_key=479b26e5222f9ef3fac0b4d50717c56b`
+        axios
+            .get(tmdbSingleMovieUri)
+            .then(res => {
+                // console.log(res)
+                setShowMovie(!showMovie)
+            })
+    }
+
+    useEffect(() => {
+        console.log(showMovie);
+    }, [showMovie])
 
     useEffect(() => {
         if (submit) {
             axios
-                .get(tmdbApiUri + submit)
+                .get(tmdbMovieListUri + submit)
                 .then(res => {
                     setMovies(res.data.results)
 
@@ -30,12 +48,18 @@ const MoviesContainer = () => {
         }
     }, [submit])
 
+
+    const SingleMovie = () => {
+
+    }
+
+    // showMovie ? MoviesList() : SingleMovie()
+
     const MoviesList = () => {
         return (
             <MovieList>
                 {
                     moviesData.map(movie => {
-                        console.log(movie)
                         return (
                             <MovieContainer movie={movie} key={movie.id} />
                         )
@@ -45,14 +69,14 @@ const MoviesContainer = () => {
         )
     }
 
-    const MovieContainer = ({ movie: { original_title, overview, poster_path, vote_average } }) => {
+    const MovieContainer = ({ movie: { original_title, overview, poster_path, vote_average, id } }) => {
         return (
             <Movie className='Movie'>
                 <Image src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt={original_title} />
                 <H4>{original_title}</H4>
-                <p>{vote_average}</p>
+                <p>★{vote_average}</p>
                 <h6>{overview}</h6>
-                <AddToListButton type="button">Add to list</AddToListButton>
+                <AddToListButton type="button" value={id} onClick={(e) => handleLearnClick(e)}>Learn more</AddToListButton>
             </Movie>
         )
     }
@@ -60,7 +84,7 @@ const MoviesContainer = () => {
     return (
         <Container>
             < Search >
-                <input className="form-control" onChange={e => setSearch(e.target.value)} type="text" name="movie" value={search} placeholder='Search for a movie.' />
+                <input className="form-control" onChange={e => setSearch(e.target.value)} type="text" name="movie" value={search} placeholder='Search for a movie' />
                 <SearchButton type="button" onClick={handleClick} value="Search" name="search" />
             </Search >
             <MoviesList />
@@ -83,6 +107,7 @@ const SearchButton = styled.input`
     font-size: 20px;
     margin: 0 5px;
 `
+
 const AddToListButton = styled.button`
     width: 100%;
     height: 30px;
@@ -98,7 +123,6 @@ const MovieList = styled.div`
 
 const Movie = styled.div`
     color: white;
-    width: 30vw;
     background-color: #0B2027;
     padding: 1rem 2rem;
     border-radius: 1rem;

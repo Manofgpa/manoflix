@@ -6,7 +6,7 @@ import React from 'react'
 const HomeComponent = () => {
 
     return (
-        <Container>
+        <Home>
             <InsideContainer>
                 <Title>
                     Bem-vindo ao Manoflix.
@@ -28,7 +28,7 @@ const HomeComponent = () => {
                     <InsideDiv>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio temporibus asperiores quaerat, tenetur delectus magni veritatis itaque fugit aliquam earum. Expedita, sunt harum enim nulla incidunt aliquid quia veniam nihil pariatur mollitia quibusdam ea ducimus laudantium quos impedit culpa officia nisi commodi, voluptatum nemo rerum repellat dolorum iure vel. Repudiandae quis eaque debitis molestias. Eos a cum officiis cupiditate culpa fugiat vero quaerat velit dolor labore quis animi mollitia repellendus repellat totam, voluptates ex? Laudantium distinctio ea rerum incidunt minus reiciendis, quis repudiandae officiis, dicta numquam velit. Cumque eveniet, ut fugit sunt quaerat eius placeat maxime totam voluptas ab, labore quia nostrum eos. Repellendus dolorum magni nulla voluptatem, a officiis assumenda! Doloremque et consectetur doloribus illum ratione tempora quis. Minus culpa ducimus numquam est! Corporis necessitatibus aliquam accusantium modi odio error, corrupti magni enim libero repellendus. Reiciendis molestiae accusamus rem. Dolor nesciunt voluptatibus veritatis quam rem perferendis blanditiis, ducimus error!</InsideDiv>
                 </Wrapper>
             </InsideContainer>
-        </Container>
+        </Home>
     )
 }
 
@@ -69,4 +69,8 @@ const Title = styled.h1`
   color: #d52941;
   text-align: center;
   border: 1px dotted #d52941;
+`
+
+const Home = styled(Container)`
+    margin: 0 2em;
 `
