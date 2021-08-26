@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
 import { Container } from '../../assets/style'
 import SingleMovie from '../../components/SingleMovie/'
+import { http, queryMoviesEndpoint, apiKeyEndpoint } from '../../config/http'
 
 
 const MoviesContainer = () => {
-
-    const tmdbMovieListUri = 'https://api.themoviedb.org/3/search/movie?api_key=479b26e5222f9ef3fac0b4d50717c56b&query='
 
     const [moviesData, setMovies] = useState([])
     const [search, setSearch] = useState('')
@@ -17,18 +15,15 @@ const MoviesContainer = () => {
 
     const handleClick = () => {
         setSubmit(search)
-        setShowMovie
-        axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=479b26e5222f9ef3fac0b4d50717c56b&language=en-US&page=1')
-            .then(res => console.log(res))
     }
 
-    const handleLearnClick = (e) => {
+    const handleSingleMovieClick = (e) => {
         const movieId = e.target.value
-        const tmdbSingleMovieUri = `https://api.themoviedb.org/3/movie/${movieId}?api_key=479b26e5222f9ef3fac0b4d50717c56b`
-        axios
-            .get(tmdbSingleMovieUri)
+
+        http
+            .get(movieId + apiKeyEndpoint)
             .then(res => {
-                // console.log(res)
+                console.log(res)
                 setShowMovie(!showMovie)
             })
     }
@@ -39,8 +34,8 @@ const MoviesContainer = () => {
 
     useEffect(() => {
         if (submit) {
-            axios
-                .get(tmdbMovieListUri + submit)
+            http
+                .get(queryMoviesEndpoint + submit)
                 .then(res => {
                     setMovies(res.data.results)
 
@@ -72,7 +67,7 @@ const MoviesContainer = () => {
                 <H4>{original_title}</H4>
                 <p>★{vote_average}</p>
                 <h6>{overview}</h6>
-                <AddToListButton type="button" value={id} onClick={(e) => handleLearnClick(e)}>Learn more</AddToListButton>
+                <AddToListButton type="button" value={id} onClick={(e) => handleSingleMovieClick(e)}>Learn more</AddToListButton>
             </Movie>
         )
     }
