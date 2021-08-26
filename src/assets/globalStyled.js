@@ -19,7 +19,6 @@ body, #root {
     flex-direction: column;
 }
 
-
 `
 
 export default GlobalStyle

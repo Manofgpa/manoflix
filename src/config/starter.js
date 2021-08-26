@@ -6,5 +6,4 @@ const starter = () => {
     dotenv.config()
 }
 
-
 export default starter

@@ -16,7 +16,3 @@ export const InsideContainer = styled.section`
   color: #9fc490;
   margin: 15px auto;
 `
-
-
-
-

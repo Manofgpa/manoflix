@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { navigate } from "@reach/router";
+import React from "react"
+import styled from "styled-components"
+import { navigate } from "@reach/router"
 
 const SingleMovie = ({
   movie: { original_title, overview, poster_path, vote_average, id },
@@ -18,15 +18,15 @@ const SingleMovie = ({
         Learn more
       </AddToListButton>
     </Movie>
-  );
-};
+  )
+}
 
-export default SingleMovie;
+export default SingleMovie
 
 const AddToListButton = styled.button`
   width: 100%;
   height: 30px;
-`;
+`
 
 const Movie = styled.div`
   color: white;
@@ -36,15 +36,15 @@ const Movie = styled.div`
   -webkit-box-shadow: 8px 5px 24px 0px #7f7f7f;
   box-shadow: 5px 2px 12px 0px #7f7f7f;
   display: grid;
-`;
+`
 
 const H4 = styled.h4`
   font-weight: bold;
   margin-top: 0.5rem;
-`;
+`
 
 const Image = styled.img`
   border: 1px dotted white;
   margin: 0.25rem;
   width: 100%;
-`;
+`

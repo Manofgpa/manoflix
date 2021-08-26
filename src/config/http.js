@@ -1,8 +1,4 @@
 import axios from 'axios'
-// import dotenv from 'dotenv'
-
-// dotenv.config({ path: './.env' })
-// console.log(process.env);
 
 // https://api.themoviedb.org/3/search/movie?api_key=479b26e5222f9ef3fac0b4d50717c56b&query=star - certo query
 

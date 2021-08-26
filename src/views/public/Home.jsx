@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Container, InsideContainer } from "../../assets/style";
-import React from "react";
+import styled from "styled-components"
+import { Container, InsideContainer } from "../../assets/style"
+import React from "react"
 
 const HomeComponent = () => {
   return (
@@ -89,14 +89,14 @@ const HomeComponent = () => {
         </Wrapper>
       </InsideContainer>
     </Home>
-  );
-};
+  )
+}
 
-export default HomeComponent;
+export default HomeComponent
 
 const Image = styled.p`
   margin: 15px;
-`;
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -105,12 +105,12 @@ const Wrapper = styled.div`
   background-color: #0b2027;
   -webkit-box-shadow: 8px 5px 24px 0px #7f7f7f;
   box-shadow: 8px 5px 24px 0px #7f7f7f;
-`;
+`
 
 const InsideDiv = styled.div`
   margin: 15px;
   text-align: center;
-`;
+`
 
 const Paragraph = styled.p`
   height: 75px;
@@ -118,7 +118,7 @@ const Paragraph = styled.p`
   display: table-cell;
   vertical-align: middle;
   padding: 10px;
-`;
+`
 const Title = styled.h1`
   font-size: 3em;
   font-weight: 600;
@@ -127,8 +127,8 @@ const Title = styled.h1`
   color: #d52941;
   text-align: center;
   border: 1px dotted #d52941;
-`;
+`
 
 const Home = styled(Container)`
   margin: 0 2em;
-`;
+`
