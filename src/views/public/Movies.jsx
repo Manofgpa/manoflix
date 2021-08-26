@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { http, queryMoviesEndpoint, apiKeyEndpoint } from "../../config/http"
+import { http, queryMoviesEndpoint } from "../../config/http"
 import { Container } from "../../assets/style"
 import SingleMovie from "../../components/SingleMovie"
 import MoviesList from "../../components/MoviesList"
 import styled from "styled-components"
 
 const MoviesContainer = () => {
-    const [moviesData, setMovies] = useState([])
-    const [search, setSearch] = useState("")
-    const [submit, setSubmit] = useState("")
-    const [showMovie, setShowMovie] = useState(false)
-    // const [singleMovie, setSingleMovie] = useState('')
-    
+  const [moviesData, setMovies] = useState([])
+  const [search, setSearch] = useState("")
+  const [submit, setSubmit] = useState("")
+  const [showMovie, setShowMovie] = useState(false)
+  // const [singleMovie, setSingleMovie] = useState('')
+
+  setShowMovie()
+
   const handleClick = () => {
     setSubmit(search)
   }
