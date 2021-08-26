@@ -7,6 +7,4 @@ const starter = () => {
 }
 
 
-
-
 export default starter
