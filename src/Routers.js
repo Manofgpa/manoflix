@@ -1,20 +1,12 @@
-import { Router } from "@reach/router"
-import Layout from './components/Layout'
-import Home from './components/Home'
-import About from './components/About'
-import Movies from './components/Movies'
 import React from 'react'
-
+import { Router } from "@reach/router"
+import Public from './views/public/'
 
 
 const Routers = () => (
-    <Layout >
-        <Router >
-            <Home path="/" />
-            <About path="/about" />
-            <Movies path="/movies" />
-        </Router >
-    </Layout>
+    <Router>
+        <Public path="/*" />
+    </Router>
 )
 
 

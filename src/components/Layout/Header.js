@@ -11,7 +11,7 @@ const HeaderComponent = () => {
             <Nav tabs>
                 <Header className="align-items-center">
                     <Logo>
-                        <img src="manoflix.png" width='200px' alt=""></img>
+                        <img src="img/manoflix.png" width='200px' alt=""></img>
                     </Logo>
                     <NavItem>
                         <NavLink tag={Link} to="/">Home</NavLink>
