@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import { https, apiKeyEndpoint } from "../../config/https"
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { https, apiKeyEndpoint } from '../../config/https'
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({})

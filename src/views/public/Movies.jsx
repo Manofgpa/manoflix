@@ -1,15 +1,35 @@
-import React, { useState, useEffect } from "react"
-import { https, queryMoviesEndpoint } from "../../config/https"
-import { Container } from "../../assets/style"
-import SingleMovie from "../../components/SingleMovie"
-import MoviesList from "../../components/MoviesList"
-import styled from "styled-components"
+import React, { useState, useEffect } from 'react'
+import { https, queryMoviesEndpoint } from '../../config/https'
+import { Container } from '../../assets/style'
+import SingleMovie from '../../components/SingleMovie'
+import MoviesList from '../../components/MoviesList'
+import styled from 'styled-components'
+import {
+  TextField,
+  Button,
+  makeStyles,
+  InputAdornment,
+  InputLabel,
+} from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search'
+
+const useStyles = makeStyles({
+  searchInput: {
+    backgroundColor: 'white',
+    width: '100%',
+    borderRadius: '0.5em',
+    marginRight: '0.25em',
+    padding: '0.25em',
+  },
+})
 
 const MoviesContainer = () => {
   const [moviesData, setMovies] = useState([])
-  const [search, setSearch] = useState("")
-  const [submit, setSubmit] = useState("")
+  const [search, setSearch] = useState('')
+  const [submit, setSubmit] = useState('')
   const [showMovie, setShowMovie] = useState(false)
+
+  const classes = useStyles()
 
   const handleClick = () => {
     setSubmit(search)
@@ -33,20 +53,23 @@ const MoviesContainer = () => {
   return (
     <Container>
       <Search>
-        <input
-          className="form-control"
+        <TextField
           onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          name="movie"
           value={search}
-          placeholder="Search for a movie"
+          label='Search for a movie'
+          className={classes.searchInput}
+          id='searchInput'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position='start'>
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
         />
-        <SearchButton
-          type="button"
-          onClick={handleClick}
-          value="Search"
-          name="search"
-        />
+        <Button variant='contained' onClick={handleClick}>
+          Search
+        </Button>
       </Search>
       {showMovie ? <SingleMovie /> : <MoviesList movies={moviesData} />}
     </Container>
@@ -59,7 +82,7 @@ const Search = styled.div`
   margin-top: 2em !important;
   text-align: center;
   margin: 0 auto;
-  width: 40%;
+  width: 20%;
   display: flex;
   color: white;
 `
