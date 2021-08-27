@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { http, queryMoviesEndpoint } from "../../config/http"
+import { https, queryMoviesEndpoint } from "../../config/https"
 import { Container } from "../../assets/style"
 import SingleMovie from "../../components/SingleMovie"
 import MoviesList from "../../components/MoviesList"
@@ -19,10 +19,7 @@ const MoviesContainer = () => {
 
   useEffect(() => {
     if (submit) {
-      //   console.log(queryMoviesEndpoint + submit)
-      //   console.log(http.get(queryMoviesEndpoint + submit))
-
-      http
+      https
         .get(queryMoviesEndpoint + submit)
         .then((res) => {
           setMovies(res.data.results)
