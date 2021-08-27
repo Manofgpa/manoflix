@@ -8,8 +8,7 @@ import {
   TextField,
   Button,
   makeStyles,
-  InputAdornment,
-  InputLabel,
+  InputAdornment
 } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 
