@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { http, apiKeyEndpoint } from "../../config/http"
-
+import { http } from "../../config/http"
+// , apiKeyEndpoint
 const Movie = (props) => {
   const [movie, setMovie] = useState({ name: "teste" })
 
