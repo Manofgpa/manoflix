@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { https, apiKeyEndpoint } from '../../config/https'
 import { Container, Box, makeStyles } from '@material-ui/core'
 import { Button } from 'reactstrap'
+import Actor from '../../components/Actor'
 
 const useStyles = makeStyles({
   root: {
@@ -17,20 +18,32 @@ const useStyles = makeStyles({
     height: '20%',
     margin: '0 0.5em',
   },
+  actors: {
+    display: 'flex',
+  },
+  casting: {
+    background: '#0B2027',
+    marginTop: '2em',
+    marginBottom: '2em',
+    padding: '1.5em',
+    color: '#ccc',
+  },
 })
 
-const Movie = (props) => {
+const Movie = props => {
   const [movie, setMovie] = useState([])
   const [director, setDirector] = useState('')
   const [genres, setGenres] = useState([])
+  const [cast, getCast] = useState([])
 
   useEffect(() => {
     https
       .get(`movie/${props.id}${apiKeyEndpoint}&append_to_response=credits`)
-      .then((res) => {
+      .then(res => {
         setMovie(res.data)
         setDirector(res.data.credits.crew[0].name)
         setGenres(res.data.genres)
+        getCast(res.data.credits.cast)
       })
   }, [props.id])
 
@@ -43,8 +56,8 @@ const Movie = (props) => {
     release_date,
   } = movie
 
-  console.log(movie)
   const classes = useStyles()
+  console.log(cast)
 
   return (
     <Container>
@@ -60,7 +73,7 @@ const Movie = (props) => {
         <Box>
           <h1>{original_title}</h1>
 
-          <Box>{genres.map((genre) => ` | ${genre.name}`)} | </Box>
+          <Box>{genres.map(genre => ` | ${genre.name}`)} | </Box>
           <Box>
             <p>{tagline}</p>
             <h3>Overview</h3>
@@ -80,10 +93,18 @@ const Movie = (props) => {
           <h2>★{vote_average}</h2>
         </Box>
       </Container>
-      <Container className={classes.root}>
+
+      <Container className={classes.casting}>
         <Box>
-          <h1>Casting</h1>
+          <h1 style={{ display: 'block' }}>Casting</h1>
         </Box>
+        <Container className={classes.actors}>
+          <Box className={classes.actors}>
+            {cast.map(actor => (
+              <Actor actor={actor} key={actor.id} />
+            ))}
+          </Box>
+        </Container>
       </Container>
     </Container>
   )
