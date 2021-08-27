@@ -10,7 +10,6 @@ const MoviesContainer = () => {
   const [search, setSearch] = useState("")
   const [submit, setSubmit] = useState("")
   const [showMovie, setShowMovie] = useState(false)
-  // const [singleMovie, setSingleMovie] = useState('')
 
   const handleClick = () => {
     setSubmit(search)
@@ -23,6 +22,7 @@ const MoviesContainer = () => {
         .get(queryMoviesEndpoint + submit)
         .then((res) => {
           setMovies(res.data.results)
+          console.log(res.data.results)
         })
         .catch((err) => {
           console.log(err)
