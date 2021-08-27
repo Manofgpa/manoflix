@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { https, apiKeyEndpoint } from '../../config/https'
 import { Container, Box, makeStyles } from '@material-ui/core'
-import { Button } from 'reactstrap'
 import Actor from '../../components/Actor'
 
 const useStyles = makeStyles({

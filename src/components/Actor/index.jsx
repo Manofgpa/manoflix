@@ -10,6 +10,9 @@ const useStyles = makeStyles({
   root: {
     height: 450,
     width: 225,
+    margin: '0 5px',
+    transition: 'transform 300ms ease 100ms',
+    transform: 'translateX(-20%)',
   },
   media: {
     widht: 200,
