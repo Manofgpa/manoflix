@@ -19,6 +19,9 @@ const MoviesContainer = () => {
 
   useEffect(() => {
     if (submit) {
+      //   console.log(queryMoviesEndpoint + submit)
+      //   console.log(http.get(queryMoviesEndpoint + submit))
+
       http
         .get(queryMoviesEndpoint + submit)
         .then((res) => {
