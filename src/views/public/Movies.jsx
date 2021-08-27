@@ -12,10 +12,9 @@ const MoviesContainer = () => {
   const [showMovie, setShowMovie] = useState(false)
   // const [singleMovie, setSingleMovie] = useState('')
 
-  setShowMovie(false)
-
   const handleClick = () => {
     setSubmit(search)
+    setShowMovie(false)
   }
 
   useEffect(() => {

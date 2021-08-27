@@ -45,6 +45,6 @@ const H4 = styled.h4`
 
 const Image = styled.img`
   border: 1px dotted white;
-  margin: 0.25rem;
+  margin: 0.24rem;
   width: 100%;
 `

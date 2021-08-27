@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
+import styled from "styled-components"
 import { http, apiKeyEndpoint } from "../../config/http"
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({ name: "teste" })
-
-  console.log(props)
 
   useEffect(() => {
     http.get(`movie/${props.id}${apiKeyEndpoint}`).then((res) => {
@@ -14,11 +13,15 @@ const Movie = (props) => {
   }, [props.id])
 
   return (
-    <div>
-      <h1>{JSON.stringify(movie)}</h1>
-      {JSON.stringify(movie)}
-    </div>
+    <MovieContainer>
+      <h1>{movie.original_title}</h1>
+      <p>{movie.overview}</p>
+    </MovieContainer>
   )
 }
 
 export default Movie
+
+const MovieContainer = styled.div`
+  color: white;
+`
