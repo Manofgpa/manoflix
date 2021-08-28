@@ -10,10 +10,10 @@ import {
   TopbarRoute,
 } from './TopbarElements'
 
-function Topbar() {
+const Topbar = ({ isOpen, toggle }) => {
   return (
-    <TopbarContainer>
-      <Icon>
+    <TopbarContainer isOpen={isOpen} onClick={toggle}>
+      <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <TopbarWrapper>

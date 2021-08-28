@@ -1,43 +1,24 @@
-import styled from 'styled-components'
-import React from 'react'
-import {
-    Nav,
-    NavbarContainer,
-    NavLogo,
-    NavLink,
-    MobileIcon,
-    NavMenu,
-    NavItem,
-    NavBtn,
-    NavBtnLink
-} from './NavbarElements'
-import { FaBars, FaHome } from 'react-icons/fa'
-import { MdMovie } from 'react-icons/md'
-import { BiLogInCircle } from 'react-icons/bi'
-import { AiOutlineUserAdd } from 'react-icons/ai'
+import Navbar from './Navbar'
+import React, { useState } from 'react'
+import Topbar from './Topbar'
+import { Fragment } from 'react'
+
 
 const HeaderComponent = () => {
 
-    return (
-        <Nav>
-            <NavLogo to='/'><img src="img/manoflix.png" width='200px' alt=""></img></NavLogo>
-            <MobileIcon>
-                <FaBars />
-            </MobileIcon>
-            <NavMenu>
-                <NavItem>
-                    <NavLink to='/'><FaHome />Home</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink to='/movies'><MdMovie />Movies</NavLink>
-                </NavItem>
-            </NavMenu>
+    const [isOpen, setIsOpen] = useState(false)
 
-            <NavBtn>
-                <NavBtnLink to='/signup'><AiOutlineUserAdd />Sign Up</NavBtnLink>
-                <NavBtnLink to='/login'><BiLogInCircle />Login</NavBtnLink>
-            </NavBtn>
-        </Nav>
+    const toggle = () => {
+        setIsOpen(!isOpen)
+        console.log(isOpen)
+    }
+
+
+    return (
+        <Fragment>
+            <Topbar isOpen={isOpen} toggle={toggle} />
+            <Navbar toggle={toggle} />
+        </Fragment>
     )
 }
 

@@ -15,16 +15,6 @@ export const Nav = styled.nav`
   }
 `
 
-export const NavbarContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
-`
-
 export const NavLogo = styled(Link)`
   justify-self: flex-start;
   cursor: pointer;
@@ -119,5 +109,6 @@ export const NavBtnLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     background-color: #fff;
     color: #d52941;
+    text-decoration: none;
   }
 `
