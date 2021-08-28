@@ -8,9 +8,9 @@ import starter from './config/starter'
 starter()
 
 ReactDOM.render(
-  <React.Fragment>
+  <React.StrictMode>
     <Routers />
     <GlobalStyle />
-  </React.Fragment>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
