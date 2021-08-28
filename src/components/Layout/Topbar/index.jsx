@@ -18,12 +18,20 @@ const Topbar = ({ isOpen, toggle }) => {
       </Icon>
       <TopbarWrapper>
         <TopbarMenu>
-          <TopbarLink to='/'>Home</TopbarLink>
-          <TopbarLink to='/movies'>Movies</TopbarLink>
-          <TopbarLink to='/signup'>Sign up</TopbarLink>
+          <TopbarLink to='/' onClick={toggle}>
+            Home
+          </TopbarLink>
+          <TopbarLink to='/movies' onClick={toggle}>
+            Movies
+          </TopbarLink>
+          <TopbarLink to='/signup' onClick={toggle}>
+            Sign up
+          </TopbarLink>
         </TopbarMenu>
         <TopBtnWrapper>
-          <TopbarRoute to='login'>Login</TopbarRoute>
+          <TopbarRoute to='login' onClick={toggle}>
+            Login
+          </TopbarRoute>
         </TopBtnWrapper>
       </TopbarWrapper>
     </TopbarContainer>

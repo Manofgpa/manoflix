@@ -10,7 +10,6 @@ const HeaderComponent = () => {
 
     const toggle = () => {
         setIsOpen(!isOpen)
-        console.log(isOpen)
     }
 
 
