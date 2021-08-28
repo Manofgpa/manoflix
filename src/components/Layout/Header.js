@@ -1,9 +1,20 @@
 import styled from 'styled-components'
 import React from 'react'
-import { Nav, NavbarContainer, NavLogo, NavLink, MobileIcon, NavMenu, NavItem } from './NavbarElements'
+import {
+    Nav,
+    NavbarContainer,
+    NavLogo,
+    NavLink,
+    MobileIcon,
+    NavMenu,
+    NavItem,
+    NavBtn,
+    NavBtnLink
+} from './NavbarElements'
 import { FaBars, FaHome } from 'react-icons/fa'
 import { MdMovie } from 'react-icons/md'
-
+import { BiLogInCircle } from 'react-icons/bi'
+import { AiOutlineUserAdd } from 'react-icons/ai'
 
 const HeaderComponent = () => {
 
@@ -21,6 +32,11 @@ const HeaderComponent = () => {
                     <NavLink to='/movies'><MdMovie />Movies</NavLink>
                 </NavItem>
             </NavMenu>
+
+            <NavBtn>
+                <NavBtnLink to='/signup'><AiOutlineUserAdd />Sign Up</NavBtnLink>
+                <NavBtnLink to='/login'><BiLogInCircle />Login</NavBtnLink>
+            </NavBtn>
         </Nav>
     )
 }

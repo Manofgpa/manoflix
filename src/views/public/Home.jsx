@@ -1,12 +1,12 @@
-import styled from "styled-components"
-import { Container, InsideContainer } from "../../assets/style"
-import React from "react"
+import styled from 'styled-components'
+import { Container, InsideContainer } from '../../assets/style'
+import React from 'react'
 
 const HomeComponent = () => {
   return (
     <Home>
       <InsideContainer>
-        <Title>Bem-vindo ao Manoflix.</Title>
+        <Title>Bem-vindo ao Manoflix</Title>
         <Wrapper>
           <InsideDiv>
             <Paragraph>
@@ -26,9 +26,9 @@ const HomeComponent = () => {
           </InsideDiv>
           <Image>
             <img
-              src="https://yt3.ggpht.com/ytc/AAUvwnhGl6gTJhFtaBC1UEsya9LY9h-sppeBE4HwHvGA=s900-c-k-c0x00ffffff-no-rj"
-              width="400"
-              alt=""
+              src='https://yt3.ggpht.com/ytc/AAUvwnhGl6gTJhFtaBC1UEsya9LY9h-sppeBE4HwHvGA=s900-c-k-c0x00ffffff-no-rj'
+              width='400'
+              alt=''
             />
           </Image>
         </Wrapper>
@@ -37,9 +37,9 @@ const HomeComponent = () => {
         <Wrapper>
           <Image>
             <img
-              src="https://images-na.ssl-images-amazon.com/images/I/71aH-U9%2BEfL.png"
-              width="400"
-              alt=""
+              src='https://images-na.ssl-images-amazon.com/images/I/71aH-U9%2BEfL.png'
+              width='400'
+              alt=''
             />
           </Image>
           <InsideDiv>
