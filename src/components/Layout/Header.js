@@ -1,4 +1,3 @@
-// import { Nav, NavItem, NavLink } from 'reactstrap';
 import styled from 'styled-components'
 import React from 'react'
 import { Nav, NavbarContainer, NavLogo, NavLink, MobileIcon, NavMenu, NavItem } from './NavbarElements'
@@ -10,17 +9,18 @@ const HeaderComponent = () => {
 
     return (
         <Nav>
-            <NavbarContainer>
-                {/* <NavLink to='/'><NavLogo src="img/manoflix.png" width='200px' alt=""></NavLogo></NavLink> */}
-                <NavLogo src="img/manoflix.png" width='200px' alt=""></NavLogo>
-                <NavMenu>
+            <NavLogo to='/'><img src="img/manoflix.png" width='200px' alt=""></img></NavLogo>
+            <MobileIcon>
+                <FaBars />
+            </MobileIcon>
+            <NavMenu>
+                <NavItem>
                     <NavLink to='/'><FaHome />Home</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink to='/movies'><MdMovie />Movies</NavLink>
-                </NavMenu>
-                <MobileIcon>
-                    <FaBars />
-                </MobileIcon>
-            </NavbarContainer>
+                </NavItem>
+            </NavMenu>
         </Nav>
     )
 }

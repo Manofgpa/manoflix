@@ -3,10 +3,9 @@ import styled from 'styled-components'
 
 export const Nav = styled.nav`
   background: #0b2027;
-  margin-top: -80px;
+  /* margin-top: -80px; */
   height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
@@ -20,7 +19,7 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -28,7 +27,7 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `
 
-export const NavLink = styled(Link)`
+export const NavLogo = styled(Link)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
@@ -36,13 +35,23 @@ export const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   font-weight: bold;
-  margin-left: 25px;
+  margin-left: 1.5em;
   display: flex;
+  flex: 1;
 `
 
-export const NavLogo = styled.img`
-  justify-self: flex-start;
+export const NavLink = styled(Link)`
   cursor: pointer;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  align-self: center;
+
+  &.active {
+    border-bottom: 3px solid #01bf71;
+  }
 `
 
 export const MobileIcon = styled.div`
@@ -62,10 +71,11 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  align-self: flex-end;
   list-style: none;
   text-align: center;
-  margin-right: -22px;
+  margin-right: 1.5em;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -73,5 +83,6 @@ export const NavMenu = styled.ul`
 `
 
 export const NavItem = styled.li`
-  height: 80px;
+  /* height: 80px; */
+  font-size: 1.8em;
 `
