@@ -8,7 +8,7 @@ import {
   TextField,
   Button,
   makeStyles,
-  InputAdornment
+  InputAdornment,
 } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 
@@ -39,11 +39,11 @@ const MoviesContainer = () => {
     if (submit) {
       https
         .get(queryMoviesEndpoint + submit)
-        .then((res) => {
+        .then(res => {
           setMovies(res.data.results)
           console.log(res.data.results)
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err)
         })
     }
@@ -53,7 +53,7 @@ const MoviesContainer = () => {
     <Container>
       <Search>
         <TextField
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={e => setSearch(e.target.value)}
           value={search}
           label='Search for a movie'
           className={classes.searchInput}
@@ -84,9 +84,4 @@ const Search = styled.div`
   width: 20%;
   display: flex;
   color: white;
-`
-
-const SearchButton = styled.input`
-  font-size: 20px;
-  margin: 0 5px;
 `
