@@ -15,7 +15,7 @@ import SearchIcon from '@material-ui/icons/Search'
 const useStyles = makeStyles({
   searchInput: {
     backgroundColor: 'white',
-    width: '100%',
+    width: '400px',
     borderRadius: '0.5em',
     marginRight: '0.25em',
     padding: '0.25em',
@@ -79,9 +79,8 @@ export default MoviesContainer
 
 const Search = styled.div`
   margin-top: 2em !important;
-  text-align: center;
   margin: 0 auto;
-  width: 20%;
   display: flex;
+  justify-content: center;
   color: white;
 `

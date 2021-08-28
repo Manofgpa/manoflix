@@ -15,6 +15,10 @@ export const Nav = styled.nav`
   }
 `
 
+export const LogoContainer = styled.div`
+  flex: 1;
+`
+
 export const NavLogo = styled(Link)`
   justify-self: flex-start;
   cursor: pointer;
