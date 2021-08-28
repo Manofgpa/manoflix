@@ -40,7 +40,7 @@ export const NavLink = styled(Link)`
   display: flex;
 `
 
-const MobileIcon = styled.div`
+export const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -51,4 +51,20 @@ const MobileIcon = styled.div`
     transform: translate(-100%, 60%);
     cursor: pointer;
   }
+`
+
+export const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -22px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+export const NavItem = styled.li`
+  height: 80px;
 `
