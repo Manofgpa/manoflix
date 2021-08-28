@@ -62,29 +62,3 @@ const SingleMovie = ({
 }
 
 export default SingleMovie
-
-// const AddToListButton = styled.button`
-//   width: 100%;
-//   height: 30px;
-// `
-
-// const Movie = styled.div`
-//   color: white;
-//   background-color: #0b2027;
-//   padding: 1rem 2rem;
-//   border-radius: 1rem;
-//   -webkit-box-shadow: 8px 5px 24px 0px #7f7f7f;
-//   box-shadow: 5px 2px 12px 0px #7f7f7f;
-//   display: grid;
-// `
-
-// const H4 = styled.h4`
-//   font-weight: bold;
-//   margin-top: 0.5rem;
-// `
-
-// const Image = styled.img`
-//   border: 1px dotted white;
-//   margin: 0.24rem;
-//   width: 100%;
-// `

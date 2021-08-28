@@ -2,7 +2,7 @@ import { Link } from '@reach/router'
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
-  background: #0b2027;
+  background: #0d0d0d;
   height: 80px;
   display: flex;
   align-items: center;
@@ -59,7 +59,6 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  /* align-items: center; */
   align-self: flex-end;
   list-style: none;
   text-align: center;
@@ -71,7 +70,6 @@ export const NavMenu = styled.ul`
 `
 
 export const NavItem = styled.li`
-  /* height: 80px; */
   font-size: 1.8em;
 `
 

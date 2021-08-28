@@ -17,7 +17,7 @@ export default FooterComponent
 const Footer = styled.footer`
     padding: 30px;
     text-align: center;
-    background-color: #0B2027;
+    background-color: #0d0d0d;
     color: #D52941;
     font-size: 1.3em;
 `

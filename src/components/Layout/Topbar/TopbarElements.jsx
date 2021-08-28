@@ -57,7 +57,7 @@ export const TopbarLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
+    color: #d52941;
     transition: 0ms.2s ease-in-out;
     text-decoration: none;
   }
@@ -70,7 +70,7 @@ export const TopBtnWrapper = styled.div`
 
 export const TopbarRoute = styled(Link)`
   border-radius: 50px;
-  background-color: #01bf71;
+  background-color: #d52941;
   white-space: nowrap;
   padding: 16px 64px;
   color: #010606;
