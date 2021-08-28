@@ -40,16 +40,23 @@ export const NavLink = styled(Link)`
   display: flex;
 `
 
+export const NavLogo = styled.img`
+  justify-self: flex-start;
+  cursor: pointer;
+`
+
 export const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
+    font-size: 1.8rem;
     top: 0;
     right: 0;
     transform: translate(-100%, 60%);
     cursor: pointer;
+    color: #fff;
   }
 `
 
