@@ -47,7 +47,7 @@ export const NavLink = styled(Link)`
   align-self: center;
 
   &:hover {
-    color: red;
+    color: #d52941;
     text-decoration: none;
   }
 `
