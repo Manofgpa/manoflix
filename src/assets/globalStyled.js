@@ -19,8 +19,6 @@ h1, footer, ul, a {
 
 body, #root {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 `

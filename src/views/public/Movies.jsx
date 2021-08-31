@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { https, queryMoviesEndpoint } from '../../config/https'
-import { Container } from '../../assets/style'
 import SingleMovie from '../../components/SingleMovie'
 import MoviesList from '../../components/MoviesList'
 import styled from 'styled-components'
@@ -50,7 +49,7 @@ const MoviesContainer = () => {
   }, [submit])
 
   return (
-    <Container>
+    <Movies>
       <Search>
         <TextField
           onChange={e => setSearch(e.target.value)}
@@ -71,7 +70,7 @@ const MoviesContainer = () => {
         </Button>
       </Search>
       {showMovie ? <SingleMovie /> : <MoviesList movies={moviesData} />}
-    </Container>
+    </Movies>
   )
 }
 
@@ -83,4 +82,10 @@ const Search = styled.div`
   display: flex;
   justify-content: center;
   color: white;
+`
+
+const Movies = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `

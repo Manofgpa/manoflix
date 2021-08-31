@@ -8,11 +8,11 @@ const Layout = ({ children }) => {
 
 
   return (
-    <Fragment>
+    <Container>
       <Header />
       <Main>{children}</Main>
       <Footer />
-    </Fragment>
+    </Container>
   )
 }
 
@@ -21,3 +21,9 @@ export default Layout
 const Main = styled.main`
   flex: 1;
 `
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  `

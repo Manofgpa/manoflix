@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { https, apiKeyEndpoint } from '../../config/https'
 import { Container, Box, makeStyles } from '@material-ui/core'
 import Actor from '../../components/Actor'
+import styled from 'styled-components'
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Movie = props => {
+const MovieContainer = props => {
   const [movie, setMovie] = useState([])
   const [director, setDirector] = useState('')
   const [genres, setGenres] = useState([])
@@ -58,7 +59,7 @@ const Movie = props => {
   console.log(cast)
 
   return (
-    <Container>
+    <Movie>
       <Container className={classes.root}>
         <Box className={classes.poster}>
           <img
@@ -104,8 +105,15 @@ const Movie = props => {
           </Box>
         </Container>
       </Container>
-    </Container>
+    </Movie>
   )
 }
 
-export default Movie
+export default MovieContainer
+
+const Movie = styled.div`
+  /* display: flex;
+  flex: 1;
+  height: 100vh;
+  flex-direction: column; */
+`
