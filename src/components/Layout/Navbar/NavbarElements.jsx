@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  padding: 10px;
 
   @media screen and (max-width: 768px) {
     transition: 0.8s all ease;
@@ -63,10 +64,9 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  align-self: flex-end;
   list-style: none;
   text-align: center;
-  margin-right: 1.5em;
+  margin-bottom: 0;
 
   @media screen and (max-width: 768px) {
     display: none;
