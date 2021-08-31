@@ -63,7 +63,7 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  align-self: auto;
+  align-self: flex-end;
   list-style: none;
   text-align: center;
   margin-right: 1.5em;
