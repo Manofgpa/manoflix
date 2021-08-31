@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { https, apiKeyEndpoint } from '../../config/https'
 import { Container, Box, makeStyles } from '@material-ui/core'
-import Actor from '../../components/Actor'
 import styled from 'styled-components'
+import MediaSlider from '../../components/MediaSlider'
 
 const useStyles = makeStyles({
   root: {
@@ -56,7 +56,6 @@ const MovieContainer = props => {
   } = movie
 
   const classes = useStyles()
-  console.log(cast)
 
   return (
     <Movie>
@@ -92,28 +91,11 @@ const MovieContainer = props => {
           <h2>★{vote_average}</h2>
         </Box>
       </Container>
-
-      <Container className={classes.casting}>
-        <Box>
-          <h1 style={{ display: 'block' }}>Casting</h1>
-        </Box>
-        <Container className={classes.actors}>
-          <Box className={classes.actors}>
-            {cast.map(actor => (
-              <Actor actor={actor} key={actor.id} />
-            ))}
-          </Box>
-        </Container>
-      </Container>
+      <MediaSlider cast={cast} />
     </Movie>
   )
 }
 
 export default MovieContainer
 
-const Movie = styled.div`
-  /* display: flex;
-  flex: 1;
-  height: 100vh;
-  flex-direction: column; */
-`
+const Movie = styled.div``
