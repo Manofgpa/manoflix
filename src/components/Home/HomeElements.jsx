@@ -16,6 +16,11 @@ export const Wrapper = styled(Container)`
   background-color: #0b2027;
   -webkit-box-shadow: 8px 5px 24px 0px #7f7f7f;
   box-shadow: 8px 5px 24px 0px #7f7f7f;
+  align-self: middle;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const InsideDiv = styled(Container)`

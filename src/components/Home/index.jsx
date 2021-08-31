@@ -45,14 +45,14 @@ const HomeContainer = () => {
         </InsideDiv>
       </Wrapper>
       <Wrapper>
-        <Image>
+        <InsideDiv>
           <img
             src='https://images-na.ssl-images-amazon.com/images/I/71aH-U9%2BEfL.png'
-            width='400'
+            width='400px'
             alt=''
             className='img-fluid'
           />
-        </Image>
+        </InsideDiv>
         <InsideDiv>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
           temporibus asperiores quaerat, tenetur delectus magni veritatis itaque
