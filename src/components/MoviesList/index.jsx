@@ -1,11 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import SingleMovie from "../SingleMovie"
+import React from 'react'
+import { Container } from 'reactstrap'
+import styled from 'styled-components'
+import SingleMovie from '../SingleMovie'
 
 const MoviesList = ({ movies }) => {
   return (
     <MovieContainer>
-      {movies.map((movie) => {
+      {movies.map(movie => {
         return <SingleMovie movie={movie} key={movie.id} />
       })}
     </MovieContainer>
@@ -14,7 +15,7 @@ const MoviesList = ({ movies }) => {
 
 export default MoviesList
 
-const MovieContainer = styled.div`
+const MovieContainer = styled(Container)`
   max-width: 1280px;
   margin: 5rem auto;
   display: grid;
