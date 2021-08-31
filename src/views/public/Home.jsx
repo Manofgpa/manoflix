@@ -1,8 +1,6 @@
-import Home from '../../components/Home'
+import HeroSection from '../../components/HeroSection'
 import React from 'react'
 
-const HomeComponent = () => {
-  return <Home />
-}
+const HomeComponent = () => <HeroSection />
 
 export default HomeComponent

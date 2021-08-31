@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Home,
-  Title,
-  Wrapper,
-  InsideDiv,
-  Paragraph,
-  Image,
-} from './HomeElements'
+import { Home, Title, Wrapper, InsideDiv, Paragraph } from './HomeElements'
 
 const HomeContainer = () => {
   return (

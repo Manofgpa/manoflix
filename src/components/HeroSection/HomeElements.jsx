@@ -5,10 +5,6 @@ export const Home = styled(Container)`
   color: #9fc490;
 `
 
-export const Image = styled.p`
-  margin: 15px;
-`
-
 export const Wrapper = styled(Container)`
   display: flex;
   padding: 10px;
