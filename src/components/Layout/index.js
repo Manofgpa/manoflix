@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './Footer'
 import styled from 'styled-components'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 
 const Layout = ({ children }) => {
