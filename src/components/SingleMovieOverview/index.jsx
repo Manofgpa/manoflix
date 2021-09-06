@@ -41,7 +41,7 @@ export const SingleMovieOverview = ({ movie, director, genres }) => {
       <Box>
         <h1>{original_title}</h1>
 
-        <Box>{genres.map(genre => ` | ${genre.name}`)} | </Box>
+        <Box>{genres?.map(genre => ` | ${genre.name}`)} | </Box>
         <Box>
           <p>{tagline}</p>
           <h3>Overview</h3>

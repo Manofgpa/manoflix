@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     transform: 'translateX(-20%)',
   },
   media: {
-    widht: 200,
+    width: 200,
     height: 325,
   },
 })
